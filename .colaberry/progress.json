@@ -5,9 +5,9 @@
     "stories_total": 15,
     "stories_verified": 0,
     "stories_submitted": 0,
-    "stories_in_progress": 0,
-    "stories_not_started": 15,
-    "criteria_total": 0,
+    "stories_in_progress": 15,
+    "stories_not_started": 0,
+    "criteria_total": 47,
     "criteria_passed": 0,
     "points_awarded": 800
   },
@@ -43,15 +43,21 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 5,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": 80,
-        "outstanding": []
+        "outstanding": [
+          "Given the Command Center, when it is opened, then every tab is reachable and every card drills down one level.",
+          "Given sample mode, when any tab is shown, then the sample data is visibly labelled as sample.",
+          "Given the Command Center, when any tab renders, then .colaberry/plan.json and .colaberry/progress.json are both committed in this repo and every tab reads its content from them at runtime rather than from hard-coded values.",
+          "Given the Command Center, when any tab is shown, then .colaberry/manifest.json is committed in this repo and every tab shows how old that data is and warns when the age exceeds a week.",
+          "Trust — no tab shows a number, a connection or a result the project has not actually produced."
+        ]
       }
     },
     {
@@ -77,15 +83,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": 80,
-        "outstanding": []
+        "outstanding": [
+          "Given a text input for a transaction, When the text is submitted, Then the transaction is recorded in the database.",
+          "Given an invalid transaction text, When the text is submitted, Then the system prompts for correction.",
+          "Trust: The transaction is logged with a timestamp and user ID."
+        ]
       }
     },
     {
@@ -111,15 +121,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": 80,
-        "outstanding": []
+        "outstanding": [
+          "Given the user is logged in, when they access the dashboard, then they see the latest metrics.",
+          "Given the user is not logged in, when they attempt to access the dashboard, then they are prompted to log in.",
+          "Trust: All dashboard accesses are logged for audit purposes."
+        ]
       }
     },
     {
@@ -145,15 +159,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": null,
-        "outstanding": []
+        "outstanding": [
+          "Given a product inventory, When a sale is recorded, Then the inventory level is updated accordingly.",
+          "Given a low-stock alert, When the inventory is checked, Then the system suggests reorder actions.",
+          "Trust: Inventory changes are logged with timestamps and user IDs."
+        ]
       }
     },
     {
@@ -179,15 +197,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": null,
-        "outstanding": []
+        "outstanding": [
+          "Given a list of overdue debts, When reminders are sent, Then customers receive notifications via the chosen channel.",
+          "Given a debt below the reminder threshold, When reminders are sent, Then no notification is sent for that debt.",
+          "Trust: All reminder actions are logged with timestamps and user IDs."
+        ]
       }
     },
     {
@@ -213,15 +235,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": null,
-        "outstanding": []
+        "outstanding": [
+          "Given a business query, When the AI is queried, Then it provides insights based on actual data.",
+          "Given insufficient data for a query, When the AI is queried, Then it informs the user of the data gap.",
+          "Trust: All AI queries and responses are logged with timestamps and user IDs."
+        ]
       }
     },
     {
@@ -247,15 +273,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": 80,
-        "outstanding": []
+        "outstanding": [
+          "Given a voice input for a transaction, When the input is processed, Then the transaction is recorded in the database.",
+          "Given an unclear voice input, When the input is processed, Then the system prompts for clarification.",
+          "Trust: Voice transactions are logged with timestamps and user IDs."
+        ]
       }
     },
     {
@@ -281,15 +311,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": 80,
-        "outstanding": []
+        "outstanding": [
+          "Given a new day, When the briefing is generated, Then it includes sales, profit, and debt information.",
+          "Given incomplete data, When the briefing is generated, Then it highlights missing information.",
+          "Trust: Briefing generation is logged with timestamps and user IDs."
+        ]
       }
     },
     {
@@ -315,15 +349,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": 80,
-        "outstanding": []
+        "outstanding": [
+          "Given a business task, When AI tools are used, Then the task is completed using actual data.",
+          "Given insufficient data for a task, When AI tools are used, Then it informs the user of the data gap.",
+          "Trust: All AI tool actions are logged with timestamps and user IDs."
+        ]
       }
     },
     {
@@ -349,15 +387,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": 80,
-        "outstanding": []
+        "outstanding": [
+          "Given a customer with a registered WhatsApp number, when a notification is triggered, then the system sends a WhatsApp message to the customer.",
+          "Given a customer without a registered WhatsApp number, when a notification is triggered, then the system logs a failure to send the message.",
+          "Trust: All sent messages are logged with tenant isolation for audit purposes."
+        ]
       }
     },
     {
@@ -383,15 +425,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": 80,
-        "outstanding": []
+        "outstanding": [
+          "Given a debt reminder configuration, When saved, Then reminders are sent automatically based on the settings.",
+          "Given an incorrect configuration, When saved, Then the system prompts for correction.",
+          "Trust: All automation configurations are logged with timestamps and user IDs."
+        ]
       }
     },
     {
@@ -417,15 +463,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": 80,
-        "outstanding": []
+        "outstanding": [
+          "Given a multi-tenant environment, when data is accessed, then the system ensures that only data belonging to the tenant is accessible.",
+          "Given a request for data from a different tenant, when the request is made, then the system denies access and logs the attempt.",
+          "Trust: All data access attempts are logged with tenant identifiers for audit purposes."
+        ]
       }
     },
     {
@@ -451,15 +501,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": 80,
-        "outstanding": []
+        "outstanding": [
+          "Given an AI action is performed, when the action is completed, then the system logs the action with details.",
+          "Given an AI action fails, when the failure occurs, then the system logs the failure with error details.",
+          "Trust: All AI actions are logged with timestamps and user identifiers for audit purposes."
+        ]
       }
     },
     {
@@ -485,15 +539,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": null,
-        "outstanding": []
+        "outstanding": [
+          "Given a mobile device, when accessing the system, then the UI adjusts to fit the screen size and orientation.",
+          "Given a desktop device, when accessing the system, then the UI provides an optimal layout for larger screens.",
+          "Trust: UI responsiveness is logged with device type and screen resolution for audit purposes."
+        ]
       }
     },
     {
@@ -519,15 +577,19 @@
       "notes": null,
       "updated_at": null,
       "verification": {
-        "state": "not_started",
+        "state": "in_progress",
         "criteria_passed": 0,
-        "criteria_total": 0,
+        "criteria_total": 3,
         "verified_at": null,
         "commit_sha": null,
         "commit_url": null,
         "commit_at": null,
         "points_awarded": null,
-        "outstanding": []
+        "outstanding": [
+          "Given a financial transaction, when calculations are required, then the system performs them server-side and returns the result.",
+          "Given a client-side calculation request, when the request is made, then the system denies it and logs the attempt.",
+          "Trust: All financial calculations are logged with transaction IDs for audit purposes."
+        ]
       }
     }
   ]

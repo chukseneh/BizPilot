@@ -1,0 +1,787 @@
+{
+  "schema_version": 2,
+  "project_name": "BizPilot Nigeria",
+  "descriptor": "An AI-powered operating system for small Nigerian businesses, focusing on deterministic financial calculations and AI-driven insights.",
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "kind": "FUNC",
+      "cluster": "Transaction Recording",
+      "priority": "must",
+      "statement": "The system must allow users to record transactions via text, voice, or manual form.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-001"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "kind": "FUNC",
+      "cluster": "Transaction Recording",
+      "priority": "must",
+      "statement": "The system must validate structured transaction data before writing to the database.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-001"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "kind": "FUNC",
+      "cluster": "Dashboard",
+      "priority": "must",
+      "statement": "The system must provide a dashboard displaying today's sales, expenses, estimated profit, customer debts, and low-stock products.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-002"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "kind": "CONSTRAINT",
+      "cluster": "Architecture",
+      "priority": "must",
+      "statement": "The system must use PostgreSQL as the database for storing business data.",
+      "from_dimensions": [
+        "systems"
+      ],
+      "fulfilled_by": []
+    },
+    {
+      "id": "REQ-005",
+      "kind": "CONSTRAINT",
+      "cluster": "AI Integration",
+      "priority": "must",
+      "statement": "The system must use the Anthropic Claude API for AI functionalities.",
+      "from_dimensions": [
+        "systems"
+      ],
+      "fulfilled_by": []
+    },
+    {
+      "id": "REQ-006",
+      "kind": "FUNC",
+      "cluster": "Inventory Management",
+      "priority": "must",
+      "statement": "The system must provide inventory management with details on product quantity, buying price, selling price, profit margin, reorder level, and supplier.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-003"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "kind": "FUNC",
+      "cluster": "AI Business Manager",
+      "priority": "must",
+      "statement": "The system must allow users to query AI for business insights using actual database data.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-005",
+        "STORY-008"
+      ]
+    },
+    {
+      "id": "REQ-008",
+      "kind": "SAFE",
+      "cluster": "Security",
+      "priority": "must",
+      "statement": "The system must ensure tenant isolation for all business data records.",
+      "from_dimensions": [
+        "security_context"
+      ],
+      "fulfilled_by": [
+        "STORY-009",
+        "STORY-011"
+      ]
+    },
+    {
+      "id": "REQ-009",
+      "kind": "FUNC",
+      "cluster": "Customer Debt Management",
+      "priority": "must",
+      "statement": "The system must provide customer debt management with reminders for overdue payments.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-004"
+      ]
+    },
+    {
+      "id": "REQ-010",
+      "kind": "SAFE",
+      "cluster": "Audit",
+      "priority": "must",
+      "statement": "The system must log all AI actions for audit purposes.",
+      "from_dimensions": [
+        "security_context"
+      ],
+      "fulfilled_by": [
+        "STORY-012"
+      ]
+    },
+    {
+      "id": "REQ-011",
+      "kind": "CONSTRAINT",
+      "cluster": "Architecture",
+      "priority": "must",
+      "statement": "The system must support multi-tenant architecture.",
+      "from_dimensions": [
+        "systems"
+      ],
+      "fulfilled_by": []
+    },
+    {
+      "id": "REQ-012",
+      "kind": "NFR",
+      "cluster": "User Interface",
+      "priority": "must",
+      "statement": "The system must provide a mobile-first responsive UI.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-013"
+      ]
+    },
+    {
+      "id": "REQ-013",
+      "kind": "CONSTRAINT",
+      "cluster": "Messaging",
+      "priority": "must",
+      "statement": "The system must use WhatsApp Business API for messaging integration.",
+      "from_dimensions": [
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-009"
+      ]
+    },
+    {
+      "id": "REQ-014",
+      "kind": "FUNC",
+      "cluster": "AI Business Manager",
+      "priority": "must",
+      "statement": "The system must provide AI-driven daily business briefings to users.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-007"
+      ]
+    },
+    {
+      "id": "REQ-015",
+      "kind": "SAFE",
+      "cluster": "Security",
+      "priority": "must",
+      "statement": "The system must ensure all financial calculations are performed server-side.",
+      "from_dimensions": [
+        "security_context"
+      ],
+      "fulfilled_by": [
+        "STORY-014"
+      ]
+    },
+    {
+      "id": "REQ-016",
+      "kind": "FUNC",
+      "cluster": "Transaction Recording",
+      "priority": "should",
+      "statement": "The system must support voice transaction entry using a speech-to-text provider.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-006"
+      ]
+    },
+    {
+      "id": "REQ-017",
+      "kind": "FUNC",
+      "cluster": "Customer Debt Management",
+      "priority": "should",
+      "statement": "The system must provide configurable automation for sending customer debt reminders.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-010"
+      ]
+    },
+    {
+      "id": "REQ-018",
+      "kind": "FUNC",
+      "cluster": "Inventory Management",
+      "priority": "should",
+      "statement": "The system must provide AI-driven inventory recommendations based on sales data.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": []
+    }
+  ],
+  "releases": [
+    {
+      "key": "r0",
+      "demo": "Record a transaction via text and display it on the dashboard with validated data stored in PostgreSQL.",
+      "goal": "Establish core transaction recording and dashboard functionality with secure data handling.",
+      "name": "Foundation and Core Features",
+      "week_end": 4,
+      "week_start": 1,
+      "story_ids": [
+        "STORY-001",
+        "STORY-011",
+        "STORY-012",
+        "STORY-013",
+        "STORY-014"
+      ],
+      "starts_on": "2026-09-24",
+      "ends_on": "2026-09-25",
+      "is_demo_target": true
+    },
+    {
+      "key": "r1",
+      "demo": "Manage inventory levels and send customer debt reminders with AI assistance.",
+      "goal": "Introduce inventory management and customer debt features.",
+      "name": "Enhanced Inventory and Customer Management",
+      "week_end": 8,
+      "week_start": 5,
+      "story_ids": [
+        "STORY-002",
+        "STORY-003",
+        "STORY-004"
+      ],
+      "starts_on": "2026-09-26",
+      "ends_on": "2026-09-27",
+      "is_demo_target": false
+    },
+    {
+      "key": "r2",
+      "demo": "Query AI for business insights and record a transaction via voice input.",
+      "goal": "Enable AI-driven business insights and voice transaction entry.",
+      "name": "AI Business Insights and Voice Entry",
+      "week_end": 12,
+      "week_start": 9,
+      "story_ids": [
+        "STORY-005",
+        "STORY-006"
+      ],
+      "starts_on": "2026-09-28",
+      "ends_on": "2026-09-28",
+      "is_demo_target": false
+    },
+    {
+      "key": "r3",
+      "demo": "Receive a daily business briefing with AI-generated insights and recommendations.",
+      "goal": "Implement AI Business Manager and daily business briefings.",
+      "name": "AI Business Manager and Daily Briefings",
+      "week_end": 16,
+      "week_start": 13,
+      "story_ids": [
+        "STORY-007",
+        "STORY-008"
+      ],
+      "starts_on": "2026-09-29",
+      "ends_on": "2026-09-30",
+      "is_demo_target": false
+    },
+    {
+      "key": "r4",
+      "demo": "Send automated debt reminders via WhatsApp and configure automation settings.",
+      "goal": "Integrate WhatsApp messaging and introduce automation for debt reminders.",
+      "name": "Messaging and Automation",
+      "week_end": 20,
+      "week_start": 17,
+      "story_ids": [
+        "STORY-009",
+        "STORY-010"
+      ],
+      "starts_on": "2026-09-30",
+      "ends_on": "2026-10-01",
+      "is_demo_target": false
+    }
+  ],
+  "stories": [
+    {
+      "id": "STORY-001",
+      "title": "Record Transaction via Text",
+      "release": "r0",
+      "fulfills": [
+        "REQ-001",
+        "REQ-002"
+      ],
+      "narrative": "As a business owner, I want to record transactions via text, so that I can easily update my business records.",
+      "acceptance": [
+        "Given a text input for a transaction, When the text is submitted, Then the transaction is recorded in the database.",
+        "Given an invalid transaction text, When the text is submitted, Then the system prompts for correction.",
+        "Trust: The transaction is logged with a timestamp and user ID."
+      ],
+      "blocked_by": [],
+      "owner_agent": "Business Owner",
+      "failure_paths": [
+        "Invalid text format",
+        "Database connection failure",
+        "Validation error",
+        "Duplicate transaction",
+        "Unauthorized access"
+      ],
+      "task_guidance": "Implement text input processing and validation for transactions, storing results in the 'transactions' table.",
+      "due_on": "2026-09-24",
+      "due_baseline_on": "2026-09-24"
+    },
+    {
+      "id": "STORY-002",
+      "title": "Display Dashboard Metrics",
+      "release": "r1",
+      "fulfills": [
+        "REQ-003"
+      ],
+      "narrative": "As a business owner, I want to view dashboard metrics, so that I can monitor business performance.",
+      "acceptance": [
+        "Given the user is logged in, when they access the dashboard, then they see the latest metrics.",
+        "Given the user is not logged in, when they attempt to access the dashboard, then they are prompted to log in.",
+        "Trust: All dashboard accesses are logged for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-001"
+      ],
+      "owner_agent": "Business Owner",
+      "failure_paths": [
+        "User is not logged in",
+        "Metrics service is unavailable",
+        "Data returned is incomplete"
+      ],
+      "task_guidance": "Implement the dashboard using the existing UI framework, ensuring metrics are fetched from the analytics service.",
+      "due_on": "2026-09-26",
+      "due_baseline_on": "2026-09-26"
+    },
+    {
+      "id": "STORY-003",
+      "title": "Manage Inventory Levels",
+      "release": "r1",
+      "fulfills": [
+        "REQ-006"
+      ],
+      "narrative": "As a business owner, I want to manage my inventory levels, so that I can ensure stock availability and profitability.",
+      "acceptance": [
+        "Given a product inventory, When a sale is recorded, Then the inventory level is updated accordingly.",
+        "Given a low-stock alert, When the inventory is checked, Then the system suggests reorder actions.",
+        "Trust: Inventory changes are logged with timestamps and user IDs."
+      ],
+      "blocked_by": [
+        "STORY-002"
+      ],
+      "owner_agent": "Business Owner",
+      "failure_paths": [
+        "Incorrect stock levels",
+        "Database update failure",
+        "Alert misconfiguration",
+        "Unauthorized access",
+        "Data inconsistency"
+      ],
+      "task_guidance": "Implement inventory tracking and alerts using the 'inventory_movements' and 'products' tables.",
+      "due_on": "2026-09-26",
+      "due_baseline_on": "2026-09-26"
+    },
+    {
+      "id": "STORY-004",
+      "title": "Send Customer Debt Reminders",
+      "release": "r1",
+      "fulfills": [
+        "REQ-009"
+      ],
+      "narrative": "As a business owner, I want to send reminders to customers with overdue debts, so that I can improve cash flow.",
+      "acceptance": [
+        "Given a list of overdue debts, When reminders are sent, Then customers receive notifications via the chosen channel.",
+        "Given a debt below the reminder threshold, When reminders are sent, Then no notification is sent for that debt.",
+        "Trust: All reminder actions are logged with timestamps and user IDs."
+      ],
+      "blocked_by": [
+        "STORY-002"
+      ],
+      "owner_agent": "Business Owner",
+      "failure_paths": [
+        "Notification delivery failure",
+        "Incorrect debt calculation",
+        "Unauthorized access",
+        "Duplicate reminders",
+        "Configuration error"
+      ],
+      "task_guidance": "Develop the reminder system using the 'customer_debts' and 'notifications' tables.",
+      "due_on": "2026-09-27",
+      "due_baseline_on": "2026-09-27"
+    },
+    {
+      "id": "STORY-005",
+      "title": "Query AI for Business Insights",
+      "release": "r2",
+      "fulfills": [
+        "REQ-007"
+      ],
+      "narrative": "As a business owner, I want to query AI for business insights, so that I can make informed decisions.",
+      "acceptance": [
+        "Given a business query, When the AI is queried, Then it provides insights based on actual data.",
+        "Given insufficient data for a query, When the AI is queried, Then it informs the user of the data gap.",
+        "Trust: All AI queries and responses are logged with timestamps and user IDs."
+      ],
+      "blocked_by": [
+        "STORY-004"
+      ],
+      "owner_agent": "Business Owner",
+      "failure_paths": [
+        "AI response delay",
+        "Data retrieval error",
+        "Unauthorized query",
+        "Incorrect insights",
+        "Data inconsistency"
+      ],
+      "task_guidance": "Integrate AI query handling using the Anthropic Claude API and 'analytics' table.",
+      "due_on": "2026-09-28",
+      "due_baseline_on": "2026-09-28"
+    },
+    {
+      "id": "STORY-006",
+      "title": "Record Transaction via Voice",
+      "release": "r2",
+      "fulfills": [
+        "REQ-016"
+      ],
+      "narrative": "As a business owner, I want to record transactions via voice, so that I can update records hands-free.",
+      "acceptance": [
+        "Given a voice input for a transaction, When the input is processed, Then the transaction is recorded in the database.",
+        "Given an unclear voice input, When the input is processed, Then the system prompts for clarification.",
+        "Trust: Voice transactions are logged with timestamps and user IDs."
+      ],
+      "blocked_by": [
+        "STORY-004"
+      ],
+      "owner_agent": "Business Owner",
+      "failure_paths": [
+        "Speech recognition error",
+        "Database connection failure",
+        "Validation error",
+        "Duplicate transaction",
+        "Unauthorized access"
+      ],
+      "task_guidance": "Implement voice-to-text processing and transaction validation using a speech-to-text provider.",
+      "due_on": "2026-09-28",
+      "due_baseline_on": "2026-09-28"
+    },
+    {
+      "id": "STORY-007",
+      "title": "Receive AI Daily Business Briefing",
+      "release": "r3",
+      "fulfills": [
+        "REQ-014"
+      ],
+      "narrative": "As a business owner, I want to receive a daily business briefing, so that I can stay informed about my business performance.",
+      "acceptance": [
+        "Given a new day, When the briefing is generated, Then it includes sales, profit, and debt information.",
+        "Given incomplete data, When the briefing is generated, Then it highlights missing information.",
+        "Trust: Briefing generation is logged with timestamps and user IDs."
+      ],
+      "blocked_by": [
+        "STORY-006"
+      ],
+      "owner_agent": "Business Owner",
+      "failure_paths": [
+        "Data retrieval error",
+        "Incorrect calculations",
+        "Notification delivery failure",
+        "Unauthorized access",
+        "Outdated data"
+      ],
+      "task_guidance": "Develop the daily briefing system using the 'analytics' and 'notifications' tables.",
+      "due_on": "2026-09-29",
+      "due_baseline_on": "2026-09-29"
+    },
+    {
+      "id": "STORY-008",
+      "title": "Implement AI Business Manager Tools",
+      "release": "r3",
+      "fulfills": [
+        "REQ-007"
+      ],
+      "narrative": "As a business owner, I want AI to manage business tools, so that I can automate routine tasks.",
+      "acceptance": [
+        "Given a business task, When AI tools are used, Then the task is completed using actual data.",
+        "Given insufficient data for a task, When AI tools are used, Then it informs the user of the data gap.",
+        "Trust: All AI tool actions are logged with timestamps and user IDs."
+      ],
+      "blocked_by": [
+        "STORY-007"
+      ],
+      "owner_agent": "Business Owner",
+      "failure_paths": [
+        "AI tool execution error",
+        "Data retrieval error",
+        "Unauthorized tool access",
+        "Incorrect task execution",
+        "Data inconsistency"
+      ],
+      "task_guidance": "Implement AI tool integration using the Anthropic Claude API and 'business_tools' table.",
+      "due_on": "2026-09-30",
+      "due_baseline_on": "2026-09-30"
+    },
+    {
+      "id": "STORY-009",
+      "title": "Send Notifications via WhatsApp",
+      "release": "r4",
+      "fulfills": [
+        "REQ-013",
+        "REQ-008"
+      ],
+      "narrative": "As a business user, I want to send notifications via WhatsApp, so that I can keep customers informed through their preferred messaging platform.",
+      "acceptance": [
+        "Given a customer with a registered WhatsApp number, when a notification is triggered, then the system sends a WhatsApp message to the customer.",
+        "Given a customer without a registered WhatsApp number, when a notification is triggered, then the system logs a failure to send the message.",
+        "Trust: All sent messages are logged with tenant isolation for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-008"
+      ],
+      "owner_agent": "Business User",
+      "failure_paths": [
+        "WhatsApp API failure",
+        "Invalid customer phone number",
+        "Message content exceeds limit"
+      ],
+      "task_guidance": "Implement WhatsApp messaging using the existing notification service. Ensure tenant isolation by tagging messages with tenant IDs in the logs.",
+      "due_on": "2026-09-30",
+      "due_baseline_on": "2026-09-30"
+    },
+    {
+      "id": "STORY-010",
+      "title": "Configure Automation for Debt Reminders",
+      "release": "r4",
+      "fulfills": [
+        "REQ-017"
+      ],
+      "narrative": "As a business owner, I want to configure automation for debt reminders, so that I can streamline my debt collection process.",
+      "acceptance": [
+        "Given a debt reminder configuration, When saved, Then reminders are sent automatically based on the settings.",
+        "Given an incorrect configuration, When saved, Then the system prompts for correction.",
+        "Trust: All automation configurations are logged with timestamps and user IDs."
+      ],
+      "blocked_by": [
+        "STORY-009"
+      ],
+      "owner_agent": "Business Owner",
+      "failure_paths": [
+        "Incorrect configuration",
+        "Unauthorized access",
+        "Duplicate reminders",
+        "Notification delivery failure",
+        "Configuration error"
+      ],
+      "task_guidance": "Develop automation configuration using the 'customer_debts' and 'automation_settings' tables.",
+      "due_on": "2026-10-01",
+      "due_baseline_on": "2026-10-01"
+    },
+    {
+      "id": "STORY-011",
+      "title": "Ensure Tenant Isolation for Business Data",
+      "release": "r0",
+      "fulfills": [
+        "REQ-008"
+      ],
+      "narrative": "As a system administrator, I want to ensure tenant isolation for all business data records, so that data privacy and security are maintained.",
+      "acceptance": [
+        "Given a multi-tenant environment, when data is accessed, then the system ensures that only data belonging to the tenant is accessible.",
+        "Given a request for data from a different tenant, when the request is made, then the system denies access and logs the attempt.",
+        "Trust: All data access attempts are logged with tenant identifiers for audit purposes."
+      ],
+      "blocked_by": [],
+      "owner_agent": "System Administrator",
+      "failure_paths": [
+        "Cross-tenant data access attempt",
+        "Improper tenant ID assignment",
+        "Data access logging failure"
+      ],
+      "task_guidance": "Implement data access controls and logging to ensure tenant isolation. Use tenant IDs to segregate data access.",
+      "due_on": "2026-09-25",
+      "due_baseline_on": "2026-09-25"
+    },
+    {
+      "id": "STORY-012",
+      "title": "Log AI Actions for Audit",
+      "release": "r0",
+      "fulfills": [
+        "REQ-010"
+      ],
+      "narrative": "As a compliance officer, I want all AI actions to be logged, so that I can audit the system's AI decisions and actions.",
+      "acceptance": [
+        "Given an AI action is performed, when the action is completed, then the system logs the action with details.",
+        "Given an AI action fails, when the failure occurs, then the system logs the failure with error details.",
+        "Trust: All AI actions are logged with timestamps and user identifiers for audit purposes."
+      ],
+      "blocked_by": [],
+      "owner_agent": "Compliance Officer",
+      "failure_paths": [
+        "AI action logging failure",
+        "Incomplete action details in logs",
+        "Timestamp mismatch in logs"
+      ],
+      "task_guidance": "Implement logging for AI actions in the system. Ensure logs include action details, timestamps, and user IDs.",
+      "due_on": "2026-09-25",
+      "due_baseline_on": "2026-09-25"
+    },
+    {
+      "id": "STORY-013",
+      "title": "Provide Mobile-First Responsive UI",
+      "release": "r0",
+      "fulfills": [
+        "REQ-012"
+      ],
+      "narrative": "As a mobile user, I want a mobile-first responsive UI, so that I can access the system effectively on my mobile device.",
+      "acceptance": [
+        "Given a mobile device, when accessing the system, then the UI adjusts to fit the screen size and orientation.",
+        "Given a desktop device, when accessing the system, then the UI provides an optimal layout for larger screens.",
+        "Trust: UI responsiveness is logged with device type and screen resolution for audit purposes."
+      ],
+      "blocked_by": [],
+      "owner_agent": "Mobile User",
+      "failure_paths": [
+        "UI layout issues on mobile",
+        "Slow UI response on device rotation",
+        "Inconsistent UI elements across devices"
+      ],
+      "task_guidance": "Design and implement a responsive UI using CSS frameworks. Test on various devices and screen sizes.",
+      "due_on": "2026-09-25",
+      "due_baseline_on": "2026-09-25"
+    },
+    {
+      "id": "STORY-014",
+      "title": "Perform Financial Calculations Server-Side",
+      "release": "r0",
+      "fulfills": [
+        "REQ-015"
+      ],
+      "narrative": "As a financial analyst, I want all financial calculations to be performed server-side, so that I can ensure accuracy and security of financial data.",
+      "acceptance": [
+        "Given a financial transaction, when calculations are required, then the system performs them server-side and returns the result.",
+        "Given a client-side calculation request, when the request is made, then the system denies it and logs the attempt.",
+        "Trust: All financial calculations are logged with transaction IDs for audit purposes."
+      ],
+      "blocked_by": [],
+      "owner_agent": "Financial Analyst",
+      "failure_paths": [
+        "Server-side calculation error",
+        "Unauthorized client-side calculation attempt",
+        "Calculation logging failure"
+      ],
+      "task_guidance": "Implement server-side logic for financial calculations. Ensure client-side requests are redirected to the server.",
+      "due_on": "2026-09-25",
+      "due_baseline_on": "2026-09-25"
+    }
+  ],
+  "agents": [],
+  "project": {
+    "name": "BizPilot Nigeria",
+    "descriptor": "An AI-powered operating system for small Nigerian businesses, focusing on deterministic financial calculations and AI-driven insights.",
+    "repo_url": "https://github.com/chukseneh/BizPilot",
+    "plan_version": 1,
+    "plan_sha256": "fa359a97c4bf08bf57d729ff54b5c8754fb674fc03e5fb20ded74037f80fa660"
+  },
+  "schedule": {
+    "build_start": "2026-09-24",
+    "build_end": "2026-10-01",
+    "demo_day": "2026-10-08",
+    "build_weeks": 1,
+    "demo_release_key": "r0",
+    "roadmap_release_keys": [
+      "r1",
+      "r2",
+      "r3",
+      "r4"
+    ],
+    "prep": [
+      {
+        "key": "PREP-1",
+        "title": "Write the demo narrative: the problem, the one moment, the guardrail",
+        "due_on": "2026-10-02"
+      },
+      {
+        "key": "PREP-2",
+        "title": "Record a first run-through and watch it back",
+        "due_on": "2026-10-03"
+      },
+      {
+        "key": "PREP-3",
+        "title": "Build the slides — what it does, who for, the number it moves",
+        "due_on": "2026-10-05"
+      },
+      {
+        "key": "PREP-4",
+        "title": "Rehearse with one other person and take their notes",
+        "due_on": "2026-10-06"
+      },
+      {
+        "key": "PREP-5",
+        "title": "Record the final demo video",
+        "due_on": "2026-10-07"
+      },
+      {
+        "key": "PREP-6",
+        "title": "Present at Demo Day",
+        "due_on": "2026-10-08"
+      }
+    ]
+  },
+  "derived": {
+    "measures": [],
+    "guardrails": [
+      {
+        "id": "REQ-008",
+        "statement": "The system must ensure tenant isolation for all business data records."
+      },
+      {
+        "id": "REQ-010",
+        "statement": "The system must log all AI actions for audit purposes."
+      },
+      {
+        "id": "REQ-015",
+        "statement": "The system must ensure all financial calculations are performed server-side."
+      }
+    ],
+    "systems": [
+      "PostgreSQL",
+      "API",
+      "WhatsApp Business"
+    ],
+    "roles": [
+      "business owner",
+      "business user",
+      "system administrator",
+      "compliance officer",
+      "mobile user",
+      "financial analyst"
+    ],
+    "counts": {
+      "requirements_total": 18,
+      "requirements_by_kind": {
+        "CONSTRAINT": 4,
+        "FUNC": 10,
+        "NFR": 1,
+        "SAFE": 3
+      },
+      "stories_total": 14,
+      "releases_total": 5,
+      "agents_total": 0,
+      "failure_paths_total": 42,
+      "agents_by_autonomy": {}
+    }
+  }
+}
