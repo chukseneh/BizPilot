@@ -19,28 +19,41 @@
       "criteria": [
         {
           "text": "Given the Command Center, when it is opened, then every tab is reachable and every card drills down one level.",
-          "passed": false
+          "passed": true,
+          "evidence": "All 9 tabs in the nav (command-center/app.js TABS/TAB_RENDERERS); every card links to #/<tab>/<id> with its own detail view; 25 routes rendered headless without error."
         },
         {
           "text": "Given sample mode, when any tab is shown, then the sample data is visibly labelled as sample.",
-          "passed": false
+          "passed": true,
+          "evidence": "Sample mode shows a SAMPLE MODE banner on every tab (render()) and a SAMPLE badge on every made-up value (sampleBadge()); sample values live only in command-center/sample.js."
         },
         {
           "text": "Given the Command Center, when any tab renders, then .colaberry/plan.json and .colaberry/progress.json are both committed in this repo and every tab reads its content from them at runtime rather than from hard-coded values.",
-          "passed": false
+          "passed": true,
+          "evidence": "fetchJson() reads .colaberry/plan.json and progress.json at page load (or the picked files when opened from disk); removing STORY-003 from a copy of plan.json removed it from every tab."
         },
         {
           "text": "Given the Command Center, when any tab is shown, then .colaberry/manifest.json is committed in this repo and every tab shows how old that data is and warns when the age exceeds a week.",
-          "passed": false
+          "passed": true,
+          "evidence": "freshnessHtml() in the header of every tab reads manifest.json generated_at: \"Data as of <date> (<age>)\", warning past 7 days (tested with a 10-day-old stamp)."
         },
         {
           "text": "Trust — no tab shows a number, a connection or a result the project has not actually produced.",
-          "passed": false
+          "passed": true,
+          "evidence": "Systems grey \"not checked from here\"; measures \"not measured\"; agents \"no runs recorded\"; business figures \"No figures yet\"; totals shown exactly as progress.json reports them."
         }
       ],
-      "files_touched": [],
+      "files_touched": [
+        "index.html",
+        ".nojekyll",
+        "command-center/app.js",
+        "command-center/styles.css",
+        "command-center/sample.js",
+        "command-center/notes.js",
+        "command-center/data-model.js"
+      ],
       "tests_added": [],
-      "notes": null,
+      "notes": "Command Center built as a static page reading .colaberry/*.json at runtime. Verified manually with headless Chrome (all routes, sample mode, stale stamp, story removal, chat answers); no automated test suite added. Data model tab is a proposed design (command-center/data-model.js) — no tables created.",
       "updated_at": null,
       "verification": {
         "state": "in_progress",

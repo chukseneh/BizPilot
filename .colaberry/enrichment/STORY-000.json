@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1",
+  "projectId": "53d2ae2c-bd3e-41ad-84bf-b90971c223f3",
+  "storyId": "STORY-000",
+  "projectTruthBaseRevision": 1,
+  "observedAt": "2026-09-30T00:48:25Z",
+  "sourceCommitSha": "91b8c410f2996a5945c40cb5082b8dda1acb3144",
+  "factProposals": [
+    {
+      "dimension": "unknowns",
+      "value": "Whether PostgreSQL, the API and WhatsApp Business are connected cannot be determined from the repo; the Command Center shows them as not checked until the running system reports its own health.",
+      "evidence": "command-center/app.js (systemRows)"
+    },
+    {
+      "dimension": "unknowns",
+      "value": "The plan carries no outcome measures or numeric targets yet (plan.derived.measures is empty).",
+      "evidence": ".colaberry/plan.json derived.measures; command-center/app.js (renderOutcomes)"
+    },
+    {
+      "dimension": "unknowns",
+      "value": "The plan carries no scoped AI agents; stories are owned by roles via owner_agent.",
+      "evidence": ".colaberry/plan.json agents; command-center/app.js (renderAgents)"
+    },
+    {
+      "dimension": "unknowns",
+      "value": "progress.json totals report 800 points awarded while 0 stories are verified; unclear whether this is points available or earned.",
+      "evidence": ".colaberry/progress.json totals.points_awarded"
+    },
+    {
+      "dimension": "data",
+      "value": "A proposed 14-table data model: every business table carries tenant_id and money is stored as integer kobo. Not created yet.",
+      "evidence": "command-center/data-model.js"
+    }
+  ],
+  "decisions": [
+    {
+      "statement": "The Command Center is a static page that reads .colaberry/plan.json, progress.json and manifest.json at runtime, with no backend or API key.",
+      "rationale": "A static page cannot keep a secret, and the platform rewrites these files on every sync.",
+      "evidence": "command-center/app.js (bootOverHttp, fetchJson)"
+    },
+    {
+      "statement": "When index.html is opened from disk, the page asks the user to pick the three .colaberry files and reads them directly; scripts are classic rather than ES modules.",
+      "rationale": "Browsers block file:// pages from fetching neighbouring files and from running module scripts.",
+      "evidence": "command-center/app.js (bootFromDisk); index.html"
+    },
+    {
+      "statement": "Connection indicators default to grey 'not checked from here', never green.",
+      "rationale": "plan.json only names the systems; nothing in the repo can reach them.",
+      "evidence": "command-center/app.js (systemRows)"
+    }
+  ],
+  "limitations": [
+    {
+      "statement": "Opened from disk, the data files must be selected again after every reload.",
+      "evidence": "command-center/app.js (bootFromDisk)"
+    },
+    {
+      "statement": "The Knowledge base chat is keyword-based over plan.json and progress.json, not an AI model; it declines questions the files cannot answer.",
+      "evidence": "command-center/app.js (answer)"
+    }
+  ],
+  "demonstrationEvidence": [
+    {
+      "kind": "file",
+      "ref": "index.html"
+    },
+    {
+      "kind": "file",
+      "ref": "command-center/app.js"
+    }
+  ],
+  "measurementEvents": []
+}
